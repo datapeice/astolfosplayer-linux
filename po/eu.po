@@ -4,8 +4,8 @@
 # Asier Sarasua Garmendia <asiersarasua@ni.eus>, 2023.
 #
 msgid ""
-msgstr "Project-Id-Version: g4music master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/neithern/g4music/-/issues\n"
+msgstr "Project-Id-Version: astolfosplayer master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/datapeice/astolfosplayer/-/issues\n"
 "POT-Creation-Date: 2023-08-17 10:19+0000\n"
 "PO-Revision-Date: 2023-08-18 18:04+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"

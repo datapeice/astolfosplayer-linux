@@ -25,7 +25,7 @@ namespace G4 {
         }
 
         public string characters {
-            get {
+            owned get {
                 return ((string32) _chars).to_string () ?? "";
             }
             set {

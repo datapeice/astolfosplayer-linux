@@ -1,10 +1,10 @@
 project(
-  'g4music', [ 'vala', 'c' ],
+  'astolfosplayer', [ 'vala', 'c' ],
   version: '4.6',
   license: 'GPL3'
 )
 
-app_id = 'com.github.neithern.' + meson.project_name()
+app_id = 'com.datapeice.' + meson.project_name()
 version = meson.project_version()
 
 gnome = import('gnome')
@@ -14,7 +14,7 @@ c_compiler = meson.get_compiler('c')
 vala_compiler = meson.get_compiler('vala')
 
 add_project_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '"', language: 'c')
-add_project_arguments('--enable-experimental-non-null', language: 'vala')
+# add_project_arguments('--enable-experimental-non-null', language: 'vala')
 
 if vala_compiler.version().version_compare('>=0.56.10')
   add_project_arguments('--define=VALA_56_10', language: 'vala')
@@ -57,6 +57,8 @@ dependencies = [
   adw_dep,
   libm_dep,
   posix_dep,
+  dependency('libsoup-2.4'),
+  dependency('json-glib-1.0'),
 ]
 
 subdir('data')

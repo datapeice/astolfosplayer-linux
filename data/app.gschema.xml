@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="g4music">
-  <schema id="@app_id@" path="/com/github/neithern/g4music/">
+<schemalist gettext-domain="astolfosplayer">
+  <schema id="@app_id@" path="/com/datapeice/astolfosplayer/">
     <key name="blur-mode" type="u">
       <range min="0" max="2"/>
       <default>1</default>
@@ -96,6 +96,22 @@
     </key>
     <key name="volume" type="d">
       <default>1</default>
+    </key>
+    <key name="server-address" type="s">
+      <default>''</default>
+      <summary>Server address for gRPC sync</summary>
+    </key>
+    <key name="username" type="s">
+      <default>''</default>
+      <summary>Username for authentication</summary>
+    </key>
+    <key name="password" type="s">
+      <default>''</default>
+      <summary>Password for authentication</summary>
+    </key>
+    <key name="auth-token" type="s">
+      <default>''</default>
+      <summary>Authentication token</summary>
     </key>
   </schema>
 </schemalist>

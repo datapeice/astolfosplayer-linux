@@ -112,7 +112,7 @@ namespace G4 {
             try {
                 var parent = _file.get_parent ();
                 var exists = parent?.query_exists () ?? false;
-                if (!exists)
+                if (exists == false)
                     parent?.make_directory_with_parents ();
                 var fos = _file.replace (null, false, FileCreateFlags.NONE);
                 var dos = new DataOutputBytes ();

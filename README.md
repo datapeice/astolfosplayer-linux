@@ -26,7 +26,7 @@ Gapless (AKA: G4Music) is a light weight music player written in GTK4, focuses o
 - Supports MPRIS control.
 
 ## Install from Flathub
-<a href="https://flathub.org/apps/com.github.neithern.g4music">
+<a href="https://flathub.org/apps/com.datapeice.astolfosplayer">
 <img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="240"/></a>
 
 ## Install from Snapcraft (unofficial)

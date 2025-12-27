@@ -24,6 +24,12 @@
           </object>
         </child>
         <child type="start">
+          <object class="GtkButton" id="sync_btn">
+            <property name="icon_name">emblem-synchronizing-symbolic</property>
+            <property name="tooltip-text" translatable="yes">Sync</property>
+          </object>
+        </child>
+        <child type="start">
           <object class="GtkToggleButton" id="search_btn">
             <property name="icon_name">edit-find-symbolic</property>
             <property name="active" bind-source="search_bar" bind-property="search_mode_enabled" bind-flags="bidirectional"/>

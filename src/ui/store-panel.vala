@@ -24,7 +24,7 @@ namespace G4 {
         public const uint LAST = 4;
     }
 
-    [GtkTemplate (ui = "/com/github/neithern/g4music/gtk/store-panel.ui")]
+    [GtkTemplate (ui = "/com/datapeice/astolfosplayer/gtk/store-panel.ui")]
     public class StorePanel : Gtk.Box, SizeWatcher {
         [GtkChild]
         public unowned Gtk.HeaderBar header_bar;
@@ -34,6 +34,8 @@ namespace G4 {
         private unowned Gtk.MenuButton sort_btn;
         [GtkChild]
         private unowned Gtk.ToggleButton search_btn;
+        [GtkChild]
+        private unowned Gtk.Button sync_btn;
         [GtkChild]
         private unowned Gtk.SearchBar search_bar;
         [GtkChild]
@@ -76,6 +78,7 @@ namespace G4 {
             search_btn.toggled.connect (on_search_btn_toggled);
             search_bar.key_capture_widget = win.content;
             search_entry.search_changed.connect (on_search_text_changed);
+            sync_btn.clicked.connect (() => _app.activate_action (ACTION_PREFS, null));
 
             _main_list = create_main_music_list ();
             _main_list.data_store = _app.music_queue;

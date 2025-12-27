@@ -5,8 +5,8 @@
 # Balázs Úr <ur.balazs at fsf dot hu>, 2023, 2024, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: g4music master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/neithern/g4music/issues\n"
+"Project-Id-Version: astolfosplayer master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/datapeice/astolfosplayer/issues\n"
 "POT-Creation-Date: 2025-09-10 13:36+0000\n"
 "PO-Revision-Date: 2025-09-11 09:31+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/neithern/g4music/issues\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/datapeice/astolfosplayer/issues\n"
 "POT-Creation-Date: 2025-09-11 07:33+0000\n"
 "PO-Revision-Date: 2025-09-13 00:09+0300\n"
 "Last-Translator: Dimitris Spentzos <jimspentzos2000@gmail.com>\n"

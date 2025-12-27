@@ -5,7 +5,7 @@ namespace G4 {
         public const uint ART_ONLY = 2;
     }
 
-    [GtkTemplate (ui = "/com/github/neithern/g4music/gtk/preferences.ui")]
+    [GtkTemplate (ui = "/com/datapeice/astolfosplayer/gtk/preferences.ui")]
     public class PreferencesWindow : Adw.PreferencesWindow {
         [GtkChild]
         unowned Adw.ComboRow blur_row;
@@ -35,6 +35,20 @@ namespace G4 {
         unowned Adw.ExpanderRow peak_row;
         [GtkChild]
         unowned Gtk.Entry peak_entry;
+        [GtkChild]
+        unowned Adw.EntryRow server_entry;
+        [GtkChild]
+        unowned Adw.EntryRow username_entry;
+        [GtkChild]
+        unowned Adw.PasswordEntryRow password_entry;
+        [GtkChild]
+        unowned Adw.PasswordEntryRow security_key_entry;
+        [GtkChild]
+        unowned Gtk.Entry token_entry;
+        [GtkChild]
+        unowned Gtk.Button login_btn;
+        [GtkChild]
+        unowned Gtk.Button register_btn;
 
         private GenericArray<Gst.ElementFactory> _audio_sinks = new GenericArray<Gst.ElementFactory> (8);
 
@@ -77,6 +91,65 @@ namespace G4 {
                 sink_names[i] = get_audio_sink_name (_audio_sinks[i]);
             audiosink_row.model = new Gtk.StringList (sink_names);
             this.bind_property ("audio_sink", audiosink_row, "selected", BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL);
+
+            settings.bind ("server-address", server_entry, "text", SettingsBindFlags.DEFAULT);
+            settings.bind ("username", username_entry, "text", SettingsBindFlags.DEFAULT);
+            settings.bind ("password", password_entry, "text", SettingsBindFlags.DEFAULT);
+            settings.bind ("auth-token", token_entry, "text", SettingsBindFlags.DEFAULT);
+
+            login_btn.clicked.connect (() => on_login_clicked (app));
+            register_btn.clicked.connect (() => on_register_clicked (app));
+        }
+
+        private void on_login_clicked (Application app) {
+            var username = username_entry.text;
+            var password = password_entry.text;
+            var server = server_entry.text;
+
+            Thread.create<void*> (() => {
+                try {
+                    var client = new AuthClient (server);
+                    var token = client.login (username, password);
+                    Idle.add (() => {
+                        token_entry.text = token;
+                        app.settings.set_string ("auth-token", token);
+                        return false;
+                    });
+                } catch (Error e) {
+                    var msg = e.message;
+                    Idle.add (() => {
+                        stderr.printf ("Login failed: %s\n", msg);
+                        return false;
+                    });
+                }
+                return null;
+            }, false);
+        }
+
+        private void on_register_clicked (Application app) {
+            var username = username_entry.text;
+            var password = password_entry.text;
+            var server = server_entry.text;
+            var security_key = security_key_entry.text;
+
+            Thread.create<void*> (() => {
+                try {
+                    var client = new AuthClient (server);
+                    var token = client.register (username, password, security_key);
+                    Idle.add (() => {
+                        token_entry.text = token;
+                        app.settings.set_string ("auth-token", token);
+                        return false;
+                    });
+                } catch (Error e) {
+                    var msg = e.message;
+                    Idle.add (() => {
+                        stderr.printf ("Register failed: %s\n", msg);
+                        return false;
+                    });
+                }
+                return null;
+            }, false);
         }
 
         public uint audio_sink {

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
     <id>@app_id@</id>
-    <name>Gapless</name>
+    <name>Astolfo's Player</name>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0-or-later</project_license>
     <summary>Play your music elegantly</summary>
 
-    <developer id="com.github.neithern">
+    <developer id="com.datapeice">
         <name translate="no">Nanling</name>
     </developer>
     <update_contact>neithern@outlook.com</update_contact>
 
-    <url type="homepage">https://gitlab.gnome.org/neithern/g4music</url>
-    <url type="bugtracker">https://gitlab.gnome.org/neithern/g4music/issues</url>
-    <url type="translate">https://l10n.gnome.org/module/g4music</url>
+    <url type="homepage">https://gitlab.gnome.org/datapeice/astolfosplayer</url>
+    <url type="bugtracker">https://gitlab.gnome.org/datapeice/astolfosplayer/issues</url>
+    <url type="translate">https://l10n.gnome.org/module/astolfosplayer</url>
 
     <launchable type="desktop-id">@app_id@.desktop</launchable>
     <provides>@app_id@.desktop</provides>
     <content_rating type="oars-1.1"/>
-    <translation type="gettext">g4music</translation>
+    <translation type="gettext">astolfosplayer</translation>
 
     <description>
-      	<p>Gapless (AKA: G4Music) is a light weight music player written in GTK4, focuses on large music collection.</p>
+      	<p>Astolfo's Player is a light weight music player written in GTK4, focuses on large music collection.</p>
         <p>Features</p>
         <ul>
         <li>Supports most music file types, Samba and any other remote protocols (depends on GIO and GStreamer).</li>
@@ -45,22 +45,18 @@
         <color type="primary" scheme_preference="dark">#266626</color>
     </branding>
 
-    <screenshots>
+        <screenshots>
         <screenshot type="default">
-            <caption>Main window</caption>
-            <image>https://gitlab.gnome.org/neithern/screenshots/-/raw/main/g4music/window.png</image>
+            <image>https://gitlab.gnome.org/datapeice/screenshots/-/raw/main/astolfosplayer/window.png</image>
         </screenshot>
         <screenshot>
-            <caption>Albums view</caption>
-            <image>https://gitlab.gnome.org/neithern/screenshots/-/raw/main/g4music/albums.png</image>
+            <image>https://gitlab.gnome.org/datapeice/screenshots/-/raw/main/astolfosplayer/albums.png</image>
         </screenshot>
         <screenshot>
-            <caption>Playing view</caption>
-            <image>https://gitlab.gnome.org/neithern/screenshots/-/raw/main/g4music/playing.png</image>
+            <image>https://gitlab.gnome.org/datapeice/screenshots/-/raw/main/astolfosplayer/playing.png</image>
         </screenshot>
         <screenshot>
-            <caption>Playlist view</caption>
-            <image>https://gitlab.gnome.org/neithern/screenshots/-/raw/main/g4music/playlist.png</image>
+            <image>https://gitlab.gnome.org/datapeice/screenshots/-/raw/main/astolfosplayer/playlist.png</image>
         </screenshot>
     </screenshots>
 

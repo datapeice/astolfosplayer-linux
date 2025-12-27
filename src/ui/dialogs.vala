@@ -50,7 +50,7 @@ namespace G4 {
         string[] authors = { "Nanling" };
         /* Translators: Replace "translator-credits" with your names, one name per line */
         var translator_credits = _("translator-credits");
-        var website = "https://gitlab.gnome.org/neithern/g4music";
+        var website = "https://gitlab.gnome.org/datapeice/astolfosplayer";
         var parent = Window.get_default ();
 #if ADW_1_5
         var win = new Adw.AboutDialog ();
@@ -61,15 +61,17 @@ namespace G4 {
 #elif ADW_1_2
         var win = new Adw.AboutWindow ();
 #endif
-#if ADW_1_2
-        win.application_icon = app.application_id;
-        win.application_name = app.name;
-        win.version = Config.VERSION;
-        win.license_type = Gtk.License.GPL_3_0;
-        win.developers = authors;
-        win.website = website;
-        win.issue_url = "https://gitlab.gnome.org/neithern/g4music/issues";
-        win.translator_credits = translator_credits;
+#if ADW_1_2 || ADW_1_5
+    // Use the application ID as the icon name
+    win.application_icon = app.application_id;
+    // Use the branded application name in About dialog
+    win.application_name = "Astolfo's Player";
+    win.version = Config.VERSION;
+    win.license_type = Gtk.License.GPL_3_0;
+    win.developers = authors;
+    win.website = website;
+    win.issue_url = "https://gitlab.gnome.org/datapeice/astolfosplayer/issues";
+    win.translator_credits = translator_credits;
 #if ADW_1_5
         win.present (parent);
 #else

@@ -2,6 +2,7 @@
 sources = [
   'action-handles.vala',
   'application.vala',
+  'auth_client.vala',
   'config.vapi',
   'main.vala',
   'gst/ape-demux.c',
@@ -57,10 +58,23 @@ sources += gnome.compile_resources(res_name,
 
 add_project_arguments('-I' + meson.current_source_dir () + '/gst/', language: 'c')
 
+dependencies = [
+  gtk_dep,
+  adw_dep,
+  dependency('gstreamer-1.0'),
+  dependency('gstreamer-tag-1.0'),
+  dependency('libsoup-2.4'),
+  dependency('json-glib-1.0'),
+]
+
 executable(c_name, sources,
   vala_args: [
     # meson.current_source_dir () + '/config.vapi',
     meson.current_source_dir () + '/gst/gst-ext.vapi',
+    meson.current_source_dir () + '/protobuf-c.vapi',
+    '--pkg', 'libsoup-2.4',
+    '--pkg', 'json-glib-1.0',
+    '--pkg', 'posix',
   ],
   dependencies: dependencies,
   install: true,

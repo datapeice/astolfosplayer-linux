@@ -6,7 +6,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: g4music\n"
+"Project-Id-Version: astolfosplayer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-26 21:16+0800\n"
 "PO-Revision-Date: 2023-08-01 16:05+0900\n"

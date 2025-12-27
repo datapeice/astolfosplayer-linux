@@ -1,9 +1,9 @@
 {
-    "app-id": "com.github.neithern.g4music",
+    "app-id": "com.datapeice.astolfosplayer",
     "runtime": "org.gnome.Platform",
     "runtime-version": "49",
     "sdk": "org.gnome.Sdk",
-    "command": "g4music",
+    "command": "astolfosplayer",
     "finish-args": [
         "--device=dri",
         "--share=ipc",
@@ -28,7 +28,7 @@
     ],
     "modules": [
         {
-            "name": "g4music",
+            "name": "astolfosplayer",
             "builddir": true,
             "buildsystem": "meson",
             "sources": [
